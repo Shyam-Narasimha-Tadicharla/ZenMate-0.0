@@ -1,0 +1,217 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    /* font-family: 'Ubuntu',sans-serif; */
+    background-size: contain;
+    overflow-x: hidden;
+  }
+  
+  .centerpara {
+    text-align: justify;
+    font-size: 1.3rem;
+    word-break: keep-all;
+    width: 97vw;
+    margin: auto;
+    padding: 1rem;
+  }
+  .opptrs4u {
+    display: flex;
+    transition: transform 0.5s ease;
+    justify-content: space-evenly;
+  }
+  .parentSlide {
+    width: 100%;
+    overflow: hidden;
+    padding: 1rem 0;
+    /* background-color: red; */
+  }
+  .oppcard {
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    background-clip: border-box;
+    background-color: white;
+    border-radius: 3px;
+    position: relative;
+    height: fit-content;
+    min-width: 31%;
+    max-width: 36%;
+    margin: 0.9rem;
+    overflow: hidden;
+    color: black;
+    transition: transform 0.3s ease-in;
+  }
+  .oppcard:hover {
+    transform: scale(1.04);
+    box-shadow: -10px 10px 76px rgba(54, 127, 255, 0.12);
+  }
+  .oppcardimg {
+    width: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+    height: 40vh;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      transform: translateY(50%);
+      height: 50%;
+    }
+    to {
+      height: 100%;
+    }
+  }
+  
+  @keyframes leftIN {
+    from {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0);
+      opacity: 1;
+    }
+  }
+  
+  .overlay {
+    display: none;
+  }
+  
+  .container:hover .overlay {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .container:hover p {
+    display: block;
+    animation: leftIN 0.5s ease-in-out;
+  }
+  
+  .oppcard p {
+    display: none;
+    position: absolute;
+    bottom: 10%;
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    height: auto;
+    color: white;
+    z-index: 3;
+  }
+  .oppcard hr {
+    align-self: center;
+    width: 89%;
+    border-width: 1.5px;
+    border-radius: 3px;
+    margin: 0 0 0.5rem;
+  }
+  
+  .cardcatg {
+    font-size: 1.5rem;
+    padding: 0.3em;
+  }
+  
+  .oppcardbtn {
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0.3rem auto;
+    width: fit-content;
+    text-decoration: none;
+    transition: all 0.3s;
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  }
+  
+  .oppcardbtn:hover {
+    color: #2b72ee;
+    scale: 1.07;
+  }
+  
+  .middle_heads_dark {
+    font-weight: 400;
+    text-align: center;
+    font-size: 60px;
+    padding: 3px;
+    color: #2b72ee;
+    /* animation: heading_slide 5s ease-in  1s forwards; */
+  }
+  h2.middle_heads_dark {
+    margin: 0.5rem 0px;
+  }
+  
+  .prev_button,
+  .next_button {
+    margin: 1.3rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0a0a5a;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .prev_button {
+    left: 0;
+  }
+  
+  .next_button {
+    right: 0;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.4rem;
+  }
+  
+  .testimonials {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+  }
+  .testimonial_card {
+    display: none;
+  }
+  .activ {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    color: black;
+    border-radius: 0 20px;
+    border: 3px solid #0a0a5a;
+    background-color: #93c5fd;
+    margin: 20px auto;
+    height: 14rem;
+    aspect-ratio: 3;
+  }
+  .review {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    text-align: left;
+    width: 100%;
+  }
+  .review p {
+    font-size: 1.3rem;
+  }
+  .activ:hover .person {
+    display: flex;
+  }
+  .person {
+    display: none;
+    position: absolute;
+  
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 0.5rem;
+  }
+  
+  .person h3,
+  .person h5 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.3rem;
+  }
+  
