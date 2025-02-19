@@ -1,6 +1,8 @@
 import React from "react";
 import TeamMemberCard from "./TeamMemberCard";
 import Layout from "../../components/layout/layout";
+import style from './AboutPage.module.css';
+import team from './team.jpg';
 
 const AboutSections = () => {
   return (
@@ -21,44 +23,55 @@ const AboutSections = () => {
         
         {/* Content */}
         <div className="relative h-full flex flex-col justify-center items-center text-white">
-          <h1 className="text-5xl md:text-7xl font-serif mb-2">About</h1>
+          <h1 className="text-5xl md:text-7xl font-serif mb-2">Meet</h1>
           <h2 className="text-4xl md:text-6xl font-serif">Our Team</h2>
         </div>
       </section>
 
       {/* Team Section */}
-      <section className="max-w-7xl mx-auto px-4 py-16 md:py-24">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Image Column */}
-          <div className="relative h-[400px] rounded-lg overflow-hidden">
-            <img 
-              src="/api/placeholder/800/600" 
-              alt="Team Meeting"
-              className="w-full h-full object-cover"
-            />
+      <section className="max-w-7xl mx-auto px-4 py-16 md:py-24" >
+      {/* <div className={style.about}> */}
+      <div>
+        <div className={`${style.responsivecontainerblock} ${style.bigContainer}`}>
+        <div
+          className={`${style.responsivecontainerblock} ${style.container} ${style.bottomContainer}`}
+        >
+          <div className={`${style.allText} ${style.bottomText}`}>
+            <p className={style.headingText}>About Us</p>
+            <p className={style.subHeadingText}>We Are Team C15</p>
+            <p className={style.description}>
+            Welcome to our mental health chat assistant platform, crafted with care by Abhinav, Shyam, Kiran, and Tanush. We’re here to support you every step of the way – a compassionate community where our empathetic AI listens, encourages, and provides helpful resources. This platform was thoughtfully built using the MERN tech stack, with Generative AI to offer tailored assistance, and WebSocket ensuring seamless, real-time communication with the Gemini API. We’ve also utilized Tailwind CSS to create a user-friendly and visually appealing interface, while Node and Express.js power the backend to keep everything running smoothly.
+            <br/>
+            <br/>
+
+Together, we’re fostering an open space where understanding, encouragement, and mental well-being take center stage. You’re never alone on this journey – we stand with you, ready to offer support as you navigate through. Let’s continue to build a space where connection and empathy thrive.
+            </p>
+            <a
+              href="https://www.youtube.com/watch?v=O3BUHwfHf84"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className={style.explore}>View More</button>
+            </a>
           </div>
 
-          {/* Content Column */}
-          <div className="space-y-6">
-            <h2 className="text-4xl font-serif text-gray-800">ZenMate</h2>
-            <div className="space-y-4 text-gray-600 leading-relaxed">
-              <p>
-                At ZenMate, we cultivate an environment of profound healing and transformative growth, 
-                championing the cause of mental wellness through innovative and accessible therapeutic approaches. 
-                Our mission transcends traditional boundaries, creating pathways to emotional well-being that 
-                resonate with the modern individual.
-              </p>
-              <p>
-                Our distinguished team of mental health professionals brings together decades of expertise 
-                in nurturing psychological wellness and facilitating personal transformation. We create an 
-                atmosphere of unconditional acceptance where individuals can explore their inner landscape, 
-                address deep-seated emotional patterns, and discover powerful solutions to life's most 
-                nuanced challenges. Through this journey of self-discovery, we stand as dedicated guides, 
-                illuminating the path toward profound emotional resilience and authentic self-expression.
-              </p>
-            </div>
+          {/* Team Image replacing the YouTube Video */}
+          <div className={style.videoContainer}>
+            <img
+              src={team}
+              className={style.mainVideo} // Keeps the same styles as the YouTube iframe
+              alt="Team Image"
+            />
+            <img
+              className={`${style.dotsImg} image-block`}
+              src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/cw3.svg"
+              alt="Decorative dots"
+            />
           </div>
         </div>
+      </div>
+      </div>
+        
       </section>
     </>
   );

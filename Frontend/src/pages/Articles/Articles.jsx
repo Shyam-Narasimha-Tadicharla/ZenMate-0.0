@@ -48,7 +48,7 @@ const BlogCard = ({ post }) => (
         <span className="text-blue-600 text-sm">{post.category}</span>
       </div>
       <h3 className="text-xl font-serif mb-3 hover:text-blue-600 transition-colors">
-        <a href={`/blog/${post.slug}`}>{post.title}</a>
+        <a href={post.slug}>{post.title}</a>
       </h3>
       <p className="text-gray-600 line-clamp-3">{post.excerpt}</p>
     </div>
@@ -58,26 +58,26 @@ const BlogCard = ({ post }) => (
 const BlogContent = () => {
   const posts = [
     {
-      title: "PTSD: More Than Just Flashbacks",
+      title: "HIIT the Trauma out your body",
       date: "Oct 9, 2024",
       category: "Trauma",
-      slug: "ptsd-more-than-flashbacks",
+      slug: "https://www.hindustantimes.com/lifestyle/health/can-hiit-heal-trauma-ptsd-the-30-minute-workout-that-gives-your-brain-an-instant-boost-101739771444277.html",
       image: "/api/placeholder/800/600",
       excerpt: "We've all experienced heartbreak, disappointment, or fear at some point in life. But some moments leave deeper, lasting impressions. Post-traumatic stress disorder is one of those hidden wounds, shaping our lives in subtle ways we might not immediately recognize..."
     },
     {
-      title: "Childhood Trauma: Understanding and Healing",
+      title: "Wanna traumatize those who traumatized you?",
       date: "Oct 4, 2024",
       category: "Trauma",
-      slug: "childhood-trauma-healing",
+      slug: "https://indianexpress.com/article/lifestyle/life-style/growing-up-with-alcoholic-parents-trauma-and-the-journey-to-healing-9646032/",
       image: "/api/placeholder/800/600",
       excerpt: "We all face difficult moments in life—times of heartache, disappointment, and challenge. Yet, some experiences go deeper, leaving behind emotional wounds that can take time and care to heal. Childhood trauma can be one of these experiences, creating lasting effects..."
     },
     {
-      title: "Falling Back into Routine: Tips for a Smooth Transition This Fall",
+      title: "Surf away your depression",
       date: "Oct 1, 2024",
       category: "General Therapy",
-      slug: "fall-routine-transition",
+      slug: "https://www.bbc.com/news/articles/c5yrz0yg5j8o",
       image: "/api/placeholder/800/600",
       excerpt: "As the air turns crisp and the leaves shift to vibrant shades of orange and gold, fall invites us to embrace a slower, more intentional pace. But transitioning from the carefree days of summer to a structured routine can feel daunting. Don't worry—we've got some..."
     }

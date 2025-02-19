@@ -1,0 +1,27 @@
+.icondivf:hover .iconf{
+    fill:white;
+    color: white;
+    transition: ease-out 0.8s;
+}
+
+.icondivi:hover .iconi{
+    color: white;
+    transition: ease-out 0.8s;
+}
+
+.icondivg:hover .icong{
+    fill: white;
+    transition: ease-out 0.8s;
+}
+
+.link a{
+    color: #4b5563;
+    transition: ease-out 0.2s;
+
+}
+
+.link a:hover{
+    color: #000dff;
+    text-decoration: underline;
+    transform: translateX(5px);
+}
