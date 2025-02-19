@@ -12,7 +12,7 @@ import 'tailwindcss/tailwind.css';
 
 const Homepage = () => {
   const navigate = useNavigate();
-
+ 
   return (
     <Layout>
       <HeroSection navigate={navigate} />
