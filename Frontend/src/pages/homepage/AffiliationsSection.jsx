@@ -26,7 +26,7 @@ const AffiliationsSection = () => {
       <div className="bg-cream-50 p-8 md:p-16">
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-serif text-center text-gray-800 mb-12">
+            <h2 className="text-4xl text-center text-gray-800 mb-12">
               Who we work with 
             </h2>
         

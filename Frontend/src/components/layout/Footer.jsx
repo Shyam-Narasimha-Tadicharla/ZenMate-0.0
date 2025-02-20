@@ -112,13 +112,13 @@ const Footer = () => {
             
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <span className="text-2xl font-serif">ZenMate</span>
+                <span className="text-2xl ">ZenMate</span>
                 <div className="border-l-2 border-gray-300 pl-2">
                   <div className="text-xs uppercase">Mental</div>
                   <div className="text-xs uppercase">Wellness</div>
                 </div>
               </div>
-              <p className="text-sm">
+              <p className="text-sm text-justify">
               You are not alone. Every step you take towards mental well-being matters, and we're here to walk with you. Your journey is unique, and taking care of yourself is the most important thing you can do.
               </p>
               <div className="pt-3 flex gap-3">
@@ -188,10 +188,18 @@ const Footer = () => {
                   </div>
                 </li>
                 <li>
-                  <div 
-                    className="cursor-pointer hover:text-gray-900"
-                  >
+                  <div className="cursor-pointer hover:text-gray-900" >
                     <Link to="/message">Chat</Link>
+                  </div>
+                </li>
+                <li>
+                  <div className="cursor-pointer hover:text-gray-900">
+                  <Link to="/analysis">Analysis</Link>
+                  </div>
+                </li>
+                <li>
+                  <div className="cursor-pointer hover:text-gray-900">
+                  <Link to="/notes">Notes</Link>
                   </div>
                 </li>
               </ul>
@@ -222,9 +230,34 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-sm">© {new Date().getFullYear()} by ZenMate Team. All Rights Reserved</p>
               <div className="flex space-x-6">
-                <a href="#" className="hover:text-gray-900">𝕏</a>
-                <a href="#" className="hover:text-gray-900">IG</a>
-                <a href="#" className="hover:text-gray-900">FB</a>
+                <a href="#" className="hover:text-gray-900">
+                  <Facebook
+                strokeWidth={0.2}
+                size={25}
+                className={"fill-blue-500 text-blue-500 " + styles.iconf}
+              /></a>
+                <a href="#" className="hover:text-gray-900">
+                <Instagram
+                strokeWidth={2}
+                size={25}
+                className={"text-pink-500 " + styles.iconi}
+              />
+                </a>
+                <a href="#" className="hover:text-gray-900">
+                <Twitter
+                strokeWidth={0.2}
+                size={25}
+                className={"fill-blue-700 text-blue-700 " + styles.iconf}
+              />
+                </a>
+                <a href="#" className="hover:text-gray-900">
+                <Github
+                strokeWidth={0.2}
+                size={25}
+                className={"fill-gray-800 text-gray-800 " + styles.icong}
+              />
+                </a>
+                
               </div>
             </div>
           </div>

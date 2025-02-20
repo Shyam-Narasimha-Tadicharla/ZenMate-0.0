@@ -17,17 +17,20 @@ const BlogHero = () => {
       {/* Content */}
       <div className="relative h-full container mx-auto px-4">
         <div className="flex flex-col justify-center items-center h-full text-center text-white">
-          <p className="text-blue-400 text-2xl mb-4 font-medium">
-            Our Blogs
-          </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl">
-            Articles you might find helpful
+          Our Blogs
           </h1>
-          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl">
-            Explore insightful articles that can enrich your knowledge and keep you informed about the latest happenings.
-          </p>
         </div>
       </div>
+      <div>
+        <center>
+          <p className="text-xl md:text-2xl max-w-3xl pt-12">
+            Articles you might find helpful
+          </p>
+        </center>
+        
+      </div>
+      
     </div>
   );
 };
@@ -84,7 +87,7 @@ const BlogContent = () => {
   ];
 
   return (
-    <section className="py-16">
+    <section className="py-32">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post, index) => (

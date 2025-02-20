@@ -3,8 +3,8 @@ import React from 'react';
 const ServiceCard = ({ title, description, image, link , text}) => {
   return (
     <div className="px-4">
-      <div className="group bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-        <div className="p-8">
+      <div className="group rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-1">
+        <div className="p-24 grid grid-cols-1 md:grid-cols-3 gap-0 flex items-center">
           <div className="mb-6 overflow-hidden">
             <img 
               src={image} 
@@ -12,7 +12,10 @@ const ServiceCard = ({ title, description, image, link , text}) => {
               className="w-full h-48 object-contain transform transition-transform duration-500 group-hover:scale-110"
             />
           </div>
-          <h3 className="text-2xl font-bold text-sage-800 mb-4 transform transition-all duration-300 group-hover:translate-x-2">
+          <div> 
+          </div>
+          <div>
+            <h3 className="text-4xl font-bold text-sage-800 mb-4 transform transition-all duration-300 group-hover:translate-x-2">
             {title}
           </h3>
           <p className="text-sage-600 mb-6 transform transition-all duration-300 group-hover:translate-x-2">
@@ -26,6 +29,9 @@ const ServiceCard = ({ title, description, image, link , text}) => {
               {text}
             </span>
           </a>
+          </div>
+          
+          
         </div>
       </div>
     </div>

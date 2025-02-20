@@ -1,4 +1,5 @@
 
+import {Logo} from '../../svgs/logoSVG';
 import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -23,17 +24,18 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full fixed top-0 z-50 bg-transparent">
-      <nav className="bg-transparent py-4 px-6 flex justify-between items-center">
+    <header className="w-full fixed top-0 z-50 text-opacity-100 backdrop-blur-sm">
+      <nav className=" py-4 px-6 flex justify-between items-center bg-opacity-70 text-opacity-100 bg-white">
         <Link to="/" className="flex items-center space-x-2">
-          <span className="text-3xl font-serif">ZenMate</span>
+          <Logo />
+          <span className="text-3xl">ZenMate</span>
           <div className="border-l-2 border-gray-300 pl-2">
             <div className="text-sm uppercase">Mental</div>
             <div className="text-sm uppercase">Wellness</div>
           </div>
         </Link>
         
-        <div className="flex items-center space-x-8">
+        <div className="flex items-center space-x-8"> 
           <Link to="/aboutus" className="hover:text-gray-600" onClick={window.scrollTo({ top: 0, behavior: 'smooth' })}>About Us</Link>
           <Link to="/articles" className="hover:text-gray-600" onClick={window.scrollTo({ top: 0, behavior: 'smooth' })}>Blogs</Link>
           <Link to="/message" className="hover:text-gray-600">Talk to Zen</Link>
