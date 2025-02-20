@@ -11,7 +11,7 @@ const ScrollToTop = () => {
     return (
       <button 
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 bg-green-100 p-3 rounded-full hover:bg-green-200 transition-colors"
+        className="fixed bottom-8 right-8 bg-blue-600 p-3 rounded-full hover:bg-blue-400 transition-colors"
       >
         ↑
       </button>
