@@ -6,6 +6,8 @@
   margin: 0;
   box-sizing: border-box;
   /* font-family: 'Libre Baskerville', serif; */
+  font-family:'Montserrat', sans-serif;
+  font-weight: 800;
 }
 
 ::-webkit-scrollbar
