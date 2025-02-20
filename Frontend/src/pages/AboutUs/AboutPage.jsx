@@ -19,7 +19,7 @@ const AboutSections = () => {
         />
         
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-blue-900" />
         
         {/* Content */}
         <div className="relative h-full flex flex-col justify-center items-center text-white">

@@ -25,7 +25,7 @@ const Header = () => {
 
   return (
     <header className="w-full fixed top-0 z-50 text-opacity-100 backdrop-blur-sm">
-      <nav className=" py-4 px-6 flex justify-between items-center bg-opacity-70 text-opacity-100 bg-white">
+      <nav className=" py-4 px-6 flex justify-between items-center bg-opacity-40 text-opacity-100 bg-white">
         <Link to="/" className="flex items-center space-x-2">
           <Logo />
           <span className="text-3xl">ZenMate</span>
