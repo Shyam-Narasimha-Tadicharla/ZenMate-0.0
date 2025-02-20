@@ -37,7 +37,7 @@
   
   .headingText {
     font-size: 40px;
-    font-weight: 700;
+    font-weight:900;
     line-height: 28px;
     color: rgb(0, 135, 177);
     margin: 0 0 10px 0;
@@ -54,13 +54,14 @@
     color: rgb(102, 102, 102);
     font-size: 32px;
     line-height: 40px;
-    font-weight: 700;
+    font-weight: bold;
     margin: 0 0 15px 0;
     padding: 0 10px 0 0;
   }
   
   .description {
-    font-size: 18px;
+    font-size: 15px;
+    text-align: justify;
     line-height: 28px;
     color: rgb(0, 0, 0);
     padding: 0 10px 0 0;

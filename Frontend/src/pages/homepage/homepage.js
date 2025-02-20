@@ -14,6 +14,7 @@ const Homepage = () => {
   const navigate = useNavigate();
  
   return (
+    <div className="homepageContainer">
     <Layout>
       <HeroSection navigate={navigate} />
       <ServicesSection />
@@ -21,6 +22,8 @@ const Homepage = () => {
       <TestimonialsSection />
       <AffiliationsSection />
     </Layout>
+    </div>
+    
   );
 };
 

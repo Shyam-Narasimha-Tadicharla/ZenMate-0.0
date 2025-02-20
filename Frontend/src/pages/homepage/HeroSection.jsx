@@ -3,9 +3,9 @@ import heroVideo from '../../components/assets/videos/design1.mp4';
 
 const HeroSection = ({ navigate }) => {
     return (
-      <div className="relative h-screen pt-24">
+      <div className=" h-screen pt-24">
         {/* Video Background */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden bg-blue-400">
           <video
             autoPlay
             muted

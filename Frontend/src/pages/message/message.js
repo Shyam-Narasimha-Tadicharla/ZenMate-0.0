@@ -8,7 +8,7 @@ import LoginContext from "../../context/context";
 import { LuLogIn, LuLogOut } from "react-icons/lu";
 
 function LoaderRipple() {
-  return (
+  return (  
     <div className={styles["lds-ripple"]}>
       <div></div>
       <div></div>
@@ -232,7 +232,7 @@ function Message() {
         <div className={styles.logoContainer} onClick={() => navigate('/')}>
           <Logo />
           <div className={styles.headerText}>
-            <h4>ZenMate</h4>
+            <h1>ZenMate</h1>
             <h6>A mental health chat assistance</h6>
           </div>
         </div>

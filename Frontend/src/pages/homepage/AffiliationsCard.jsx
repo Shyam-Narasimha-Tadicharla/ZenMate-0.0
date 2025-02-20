@@ -11,7 +11,7 @@ const AffiliationsCard = ({ member }) => {
         />
       </div>
       <div className="p-6 text-center">
-        <h3 className="text-xl font-serif mb-2">{member.name}</h3>
+        <h3 className="text-xl mb-2">{member.name}</h3>
         <p className="text-gray-600">{member.role}</p>
       </div>
     </div>

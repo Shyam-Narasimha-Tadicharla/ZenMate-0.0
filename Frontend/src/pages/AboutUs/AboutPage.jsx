@@ -23,8 +23,8 @@ const AboutSections = () => {
         
         {/* Content */}
         <div className="relative h-full flex flex-col justify-center items-center text-white">
-          <h1 className="text-5xl md:text-7xl font-serif mb-2">Meet</h1>
-          <h2 className="text-4xl md:text-6xl font-serif">Our Team</h2>
+          <h1 className="text-5xl md:text-7xl mb-2">Meet</h1>
+          <h2 className="text-4xl md:text-6xl ">Our Team</h2>
         </div>
       </section>
 
@@ -95,7 +95,7 @@ const TeamSection = () => {
       image: "/api/placeholder/400/500"
     },
     {
-      name: "Sai kiran Peddada",
+      name: "Sai kiran Pedada",
       role: "Therapeutic Specialist",
       image: "/api/placeholder/400/500"
     }
@@ -105,7 +105,7 @@ const TeamSection = () => {
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-serif text-center text-gray-800 mb-12">
+        <h2 className="text-4xl text-center text-gray-800 mb-12">
           Meet Our Team
         </h2>
         
