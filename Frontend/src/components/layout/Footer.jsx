@@ -243,13 +243,8 @@ const Footer = () => {
                 className={"text-pink-500 " + styles.iconi}
               />
                 </a>
-                <a href="#" className="hover:text-gray-900">
-                <Twitter
-                strokeWidth={0.2}
-                size={25}
-                className={"fill-blue-700 text-blue-700 " + styles.iconf}
-              />
-                </a>
+              
+
                 <a href="#" className="hover:text-gray-900">
                 <Github
                 strokeWidth={0.2}
@@ -257,6 +252,17 @@ const Footer = () => {
                 className={"fill-gray-800 text-gray-800 " + styles.icong}
               />
                 </a>
+
+                <a href="#" className="hover:text-gray-900">
+                <Twitter
+                strokeWidth={0.2}
+                size={25}
+                className={"fill-blue-700 text-blue-700 " + styles.iconf}
+              />
+                </a>
+
+
+                
                 
               </div>
             </div>

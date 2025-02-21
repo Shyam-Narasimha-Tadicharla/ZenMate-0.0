@@ -4,6 +4,10 @@ import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { LoginWithEmail, LoginWithGoogle, SignupWithEmail } from "../../firebase/firebase";
 import LoginContext from "../../context/context";
+import {Logo} from '../../svgs/logoSVG';
+import GoogleIcon from "../../svgs/googleicon.png";
+
+
 
 const Login = () => {
   const [isRegistered, setIsRegistered] = useState(true);
@@ -69,6 +73,39 @@ const Login = () => {
     }
   };
 
+  // const handleSubmitButton = (e) => {
+  //   e.preventDefault();
+    
+  //   if (loginData.email === "" || loginData.password === "") {
+  //     toast.error("Please enter all the fields", {
+  //       position: "top-right"
+  //     });
+  //     return;
+  //   }
+
+  //   const isCorrectMail = loginData.email
+  //     .toLowerCase()
+  //     .match(
+  //       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  //     );
+  //   if (!isCorrectMail) {
+  //     toast.error("Please enter a correct email", {
+  //       position: "top-right"
+  //     });
+  //     return;
+  //   }
+    
+  //   if (!isRegistered && loginData.password.length < 8) {
+  //     toast.error("Please enter a longer password", {
+  //       position: "top-right"
+  //     });
+  //     return;
+  //   }
+
+  //   setLogging(true);
+  //   LoginandSignup();
+  // };
+
   const handleSubmitButton = (e) => {
     e.preventDefault();
     
@@ -78,7 +115,8 @@ const Login = () => {
       });
       return;
     }
-
+  
+    // Email validation
     const isCorrectMail = loginData.email
       .toLowerCase()
       .match(
@@ -90,14 +128,43 @@ const Login = () => {
       });
       return;
     }
-    
-    if (!isRegistered && loginData.password.length < 8) {
-      toast.error("Please enter a longer password", {
-        position: "top-right"
-      });
-      return;
+  
+    // Password validation (only for sign-up)
+    if (!isRegistered) {
+      const password = loginData.password;
+      
+      if (password.length < 8) {
+        toast.error("Password must be at least 8 characters long", {
+          position: "top-right"
+        });
+        return;
+      }
+      if (!/[A-Z]/.test(password)) {
+        toast.error("Password must contain at least one uppercase letter", {
+          position: "top-right"
+        });
+        return;
+      }
+      if (!/[a-z]/.test(password)) {
+        toast.error("Password must contain at least one lowercase letter", {
+          position: "top-right"
+        });
+        return;
+      }
+      if (!/[0-9]/.test(password)) {
+        toast.error("Password must contain at least one number", {
+          position: "top-right"
+        });
+        return;
+      }
+      if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+        toast.error("Password must contain at least one special character (!@#$%^&*)", {
+          position: "top-right"
+        });
+        return;
+      }
     }
-
+  
     setLogging(true);
     LoginandSignup();
   };
@@ -114,7 +181,8 @@ const Login = () => {
       <ToastContainer />
       <div className="flex items-center mb-8">
       <Link to="/" className="flex items-center space-x-2">
-          <span className="text-3xl font-serif">ZenMate</span>
+          <Logo/>
+          <span className="text-3xl">ZenMate</span>
           <div className="border-l-2 border-gray-300 pl-2">
             <div className="text-sm uppercase">Mental</div>
             <div className="text-sm uppercase">Wellness</div>
@@ -126,7 +194,7 @@ const Login = () => {
           {isRegistered ? (
             <>Welcome Back <span role="img" aria-label="wave">👋</span></>
           ) : (
-            <>Register a New Account <span role="img" aria-label="point down">👇</span></>
+            <>Register Account <span role="img" aria-label="point down">👇</span></>
           )}
         </h2>
         <form onSubmit={handleSubmitButton}>
@@ -177,7 +245,8 @@ const Login = () => {
           onClick={handleLoginWithGoogle}
           className="w-full mt-4 bg-white border border-gray-300 text-gray-700 p-2 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 flex items-center justify-center"
         >
-          <img src="/google-icon.png" alt="Google" className="w-5 h-5 mr-2" />
+          <img src={GoogleIcon} alt="Google" className="w-8 h-8 mr-2" />
+          {/* <img src={GoogleIcon} alt="" className={styles.googleImage} /> */}
           {isRegistered ? 'Sign in ' : 'Sign up '}with Google
         </button>
         <div className="mt-4 text-center">
