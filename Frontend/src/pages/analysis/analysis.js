@@ -266,7 +266,7 @@ function Analysis() {
           <Logo />
           <div className={styles.headerText}>
             <h4>ZenMate</h4>
-            <h6>Your friend in need :D</h6>
+            <h6>A mental health chat assistance</h6>
           </div>
         </div>
 

@@ -5,9 +5,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import chatImage from '../../components/assets/images/chatImage.jpg';
-import blogImage from '../../components/assets/images/blogImage.jpg';
-import analysisImage from '../../components/assets/images/analysisImage.jpg';
+import chatImage from '../../components/assets/images/ai.png';
+import blogImage from '../../components/assets/images/chatwith.png';
+import analysisImage from '../../components/assets/images/personal.png';
+import counsel from '../../components/assets/images/counsel.png';
+
 
 const ServicesSection = () => {
   const settings = {
@@ -43,6 +45,13 @@ const ServicesSection = () => {
       image: analysisImage,
       link: "/analysis",
       text: "Check progress"
+    },
+    {
+      title: "Counselling Sessions",
+      description: "We provide accessible online counseling for mental health problems, ensuring immediate support with flexible scheduling worldwide.",
+      image: counsel,
+      link: "/notes",
+      text: "Book a Session"
     }
   ];
 
@@ -50,7 +59,7 @@ const ServicesSection = () => {
     <section className="bg-gradient-to-b from-white to-sage-50 py-16 w-full">
       <div className="w-full mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-5xl text-sage-800 mb-4 pl-0">
+          <h2 className="text-7xl text-sage-800 mb-4 pl-0">
             Our Services
           </h2>
           <p className="text-lg text-sage-600 max-w-2xl mx-auto">

@@ -3,11 +3,11 @@ import Layout from "../../components/layout/layout";
 
 const BlogHero = () => {
   return (
-    <div className="relative w-full h-[60vh] min-h-[400px]">
+    <div className="relative w-full h-[40vh] min-h-[400px] bg-blue-800">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
-          src="/api/placeholder/1920/1080"
+          src=""
           alt="Blog Hero"
           className="w-full h-full object-cover"
         />
@@ -18,7 +18,7 @@ const BlogHero = () => {
       <div className="relative h-full container mx-auto px-4">
         <div className="flex flex-col justify-center items-center h-full text-center text-white">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl">
-          Our Blogs
+          Blogs For You 
           </h1>
         </div>
       </div>
@@ -65,7 +65,7 @@ const BlogContent = () => {
       date: "Oct 9, 2024",
       category: "Trauma",
       slug: "https://www.hindustantimes.com/lifestyle/health/can-hiit-heal-trauma-ptsd-the-30-minute-workout-that-gives-your-brain-an-instant-boost-101739771444277.html",
-      image: "/api/placeholder/800/600",
+      image: "https://images.ctfassets.net/zkw0qlnf0vqv/psycom_page_fid31389_asset_31385/44d168240cb76bbbc6ec828143505f51/Conflict_Concept?fm=webp&fit=thumb&q=65&w=864&h=576",
       excerpt: "We've all experienced heartbreak, disappointment, or fear at some point in life. But some moments leave deeper, lasting impressions. Post-traumatic stress disorder is one of those hidden wounds, shaping our lives in subtle ways we might not immediately recognize..."
     },
     {
@@ -73,7 +73,7 @@ const BlogContent = () => {
       date: "Oct 4, 2024",
       category: "Trauma",
       slug: "https://indianexpress.com/article/lifestyle/life-style/growing-up-with-alcoholic-parents-trauma-and-the-journey-to-healing-9646032/",
-      image: "/api/placeholder/800/600",
+      image: "https://images.ctfassets.net/zkw0qlnf0vqv/psycom_page_fid31958_asset_14576/87f8270d6f9b6abff590cc08c2d8c771/Seesaw_Scale_with_Emoticons_-_3D_Rendering?fm=webp&fit=thumb&q=65&w=864&h=576",
       excerpt: "We all face difficult moments in life—times of heartache, disappointment, and challenge. Yet, some experiences go deeper, leaving behind emotional wounds that can take time and care to heal. Childhood trauma can be one of these experiences, creating lasting effects..."
     },
     {
@@ -81,7 +81,31 @@ const BlogContent = () => {
       date: "Oct 1, 2024",
       category: "General Therapy",
       slug: "https://www.bbc.com/news/articles/c5yrz0yg5j8o",
-      image: "/api/placeholder/800/600",
+      image: "https://images.ctfassets.net/zkw0qlnf0vqv/psycom_page_fid33063_asset_33035/c6f05ce2b9f3f04fe328461176a4fc42/Deception_Concept_-_Disguise_Between_Shark_And_Goldfish?fm=webp&fit=thumb&q=65&w=864&h=576",
+      excerpt: "As the air turns crisp and the leaves shift to vibrant shades of orange and gold, fall invites us to embrace a slower, more intentional pace. But transitioning from the carefree days of summer to a structured routine can feel daunting. Don't worry—we've got some..."
+    },
+    {
+      title: "HIIT the Trauma out your body",
+      date: "Oct 9, 2024",
+      category: "Trauma",
+      slug: "https://www.hindustantimes.com/lifestyle/health/can-hiit-heal-trauma-ptsd-the-30-minute-workout-that-gives-your-brain-an-instant-boost-101739771444277.html",
+      image: "https://images.ctfassets.net/zkw0qlnf0vqv/psycom_page_fid31389_asset_31385/44d168240cb76bbbc6ec828143505f51/Conflict_Concept?fm=webp&fit=thumb&q=65&w=864&h=576",
+      excerpt: "We've all experienced heartbreak, disappointment, or fear at some point in life. But some moments leave deeper, lasting impressions. Post-traumatic stress disorder is one of those hidden wounds, shaping our lives in subtle ways we might not immediately recognize..."
+    },
+    {
+      title: "Wanna traumatize those who traumatized you?",
+      date: "Oct 4, 2024",
+      category: "Trauma",
+      slug: "https://indianexpress.com/article/lifestyle/life-style/growing-up-with-alcoholic-parents-trauma-and-the-journey-to-healing-9646032/",
+      image: "https://images.ctfassets.net/zkw0qlnf0vqv/psycom_page_fid31958_asset_14576/87f8270d6f9b6abff590cc08c2d8c771/Seesaw_Scale_with_Emoticons_-_3D_Rendering?fm=webp&fit=thumb&q=65&w=864&h=576",
+      excerpt: "We all face difficult moments in life—times of heartache, disappointment, and challenge. Yet, some experiences go deeper, leaving behind emotional wounds that can take time and care to heal. Childhood trauma can be one of these experiences, creating lasting effects..."
+    },
+    {
+      title: "Surf away your depression",
+      date: "Oct 1, 2024",
+      category: "General Therapy",
+      slug: "https://www.bbc.com/news/articles/c5yrz0yg5j8o",
+      image: "https://images.ctfassets.net/zkw0qlnf0vqv/psycom_page_fid33063_asset_33035/c6f05ce2b9f3f04fe328461176a4fc42/Deception_Concept_-_Disguise_Between_Shark_And_Goldfish?fm=webp&fit=thumb&q=65&w=864&h=576",
       excerpt: "As the air turns crisp and the leaves shift to vibrant shades of orange and gold, fall invites us to embrace a slower, more intentional pace. But transitioning from the carefree days of summer to a structured routine can feel daunting. Don't worry—we've got some..."
     }
   ];
