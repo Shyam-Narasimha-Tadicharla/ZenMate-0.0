@@ -23,7 +23,7 @@ const TestimonialCard = ({ testimonials }) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       handleNext();
-    }, 5000); // Adjust the interval as needed (e.g., 5000 milliseconds = 5 seconds)
+    }, 3000); // Adjust the interval as needed (e.g., 5000 milliseconds = 5 seconds)
 
     return () => clearInterval(intervalId);
   }, [testimonials, currentIndex]);

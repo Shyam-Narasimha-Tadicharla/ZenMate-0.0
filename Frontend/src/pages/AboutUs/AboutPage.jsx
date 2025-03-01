@@ -3,6 +3,7 @@ import TeamMemberCard from "./TeamMemberCard";
 import Layout from "../../components/layout/layout";
 import style from './AboutPage.module.css';
 import team from './team.jpg';
+import tanush from "../../components/assets/images/tanush.jpeg";
 
 const AboutSections = () => {
   return (
@@ -82,22 +83,22 @@ const TeamSection = () => {
     {
       name: "Abhinav Jayanth",
       role: "Lead Therapist",
-      image: "/api/placeholder/400/500"
+      image: "https://abhinav-gumpu-portfolio.vercel.app/assets/mypic.jpeg"
     },
     {
       name: "Shyam Narasimha Tadicharla",
       role: "Wellness Coach",
-      image: "/api/placeholder/400/500"
+      image: team
     },
     {
       name: "Tanush Talla",
       role: "Fitness Coach",
-      image: "/api/placeholder/400/500"
+      image: tanush
     },
     {
       name: "Sai kiran Pedada",
       role: "Therapeutic Specialist",
-      image: "/api/placeholder/400/500"
+      image: team
     }
   ];
 

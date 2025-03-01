@@ -1,15 +1,16 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import {Logo} from '../../svgs/logoSVG'
+import { Logo } from "../../svgs/logoSVG";
+
 
 function Error() {
   const navigate =  useNavigate();
   return (
     <div className='h-screen p-4' style={{background : '#f6f3ef'}}>
         <div className='flex flex-row gap-2 absolute'>
-          {/* <Logo /> */}
+          <Logo />
           <Link to="/" className="flex items-center space-x-2">
-                    <span className="text-3xl font-serif">ZenMate</span>
+                    <span className="text-3xl ">ZenMate</span>
                     <div className="border-l-2 border-gray-300 pl-2">
                       <div className="text-sm uppercase">Mental</div>
                       <div className="text-sm uppercase">Wellness</div>
