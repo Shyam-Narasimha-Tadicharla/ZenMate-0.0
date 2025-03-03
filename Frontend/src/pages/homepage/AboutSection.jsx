@@ -39,7 +39,7 @@ const AboutSection = () => {
         
         {/* CTA Button */}
         <div className="mt-6">
-          <Link to="/message" className="bg-[#8BC34A] text-white text-lg px-6 py-3 rounded-full hover:bg-sage-600 transition duration-300 shadow-md">
+          <Link to="/message" className="bg-[#5781f5] text-white text-lg px-6 py-3 rounded-full hover:bg-sage-600 transition duration-300 shadow-md">
             Chat with Zen
           </Link>
         </div>

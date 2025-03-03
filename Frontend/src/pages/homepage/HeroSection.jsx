@@ -12,7 +12,7 @@ const HeroSection = ({ navigate }) => {
             loop
             className="w-full h-full object-cover"
           >
-            <source src={heroVideo} type="video/mp4" />
+            <source src='https://d3phaj0sisr2ct.cloudfront.net/site/videos/footer-videos/Hyperlapse+2.mp4' type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className="absolute inset-0 bg-black bg-opacity-40" />

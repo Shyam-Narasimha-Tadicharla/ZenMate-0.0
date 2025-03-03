@@ -4,23 +4,27 @@ import Layout from "../../components/layout/layout";
 import style from './AboutPage.module.css';
 import team from './team.jpg';
 import tanush from "../../components/assets/images/tanush.jpeg";
+import kiran from "../../components/assets/images/kiran.png";
+import shyam from "../../components/assets/images/shyam.png";
+
+
 
 const AboutSections = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[400px] w-full overflow-hidden">
+      <section className="relative h-[400px] w-full overflow-hidden mt-2">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url("/api/placeholder/1920/400")',
+            backgroundImage: 'url("https://as1.ftcdn.net/jpg/04/69/47/26/1000_F_469472665_yj2VQmpLndoFFSswKwB3o6naKUoBb27X.jpg")',
             filter: 'brightness(0.7)'
           }}
         />
         
         {/* Overlay */}
-        <div className="absolute inset-0 bg-blue-900" />
+        <div className="absolute inset-0 opacity-80 bg-blue-900" />
         
         {/* Content */}
         <div className="relative h-full flex flex-col justify-center items-center text-white">
@@ -88,7 +92,7 @@ const TeamSection = () => {
     {
       name: "Shyam Narasimha Tadicharla",
       role: "Wellness Coach",
-      image: team
+      image: shyam
     },
     {
       name: "Tanush Talla",
@@ -98,7 +102,7 @@ const TeamSection = () => {
     {
       name: "Sai kiran Pedada",
       role: "Therapeutic Specialist",
-      image: team
+      image: kiran
     }
   ];
 

@@ -96,7 +96,7 @@ function ScoreChart({ dataset }) {
         label: "Wellness",
         data: [],
         fill: false,
-        borderColor: "purple",
+        borderColor: "red",
         pointBackgroundColor: "black",
         pointBorderColor: "black",
         pointBorderWidth: 2,
@@ -295,7 +295,7 @@ function Analysis() {
       <main style={{ minHeight: "100vh" }}>
         <section className={styles.chartCont}>
           <ScoreChart dataset={analysisHist} />
-          <h2>Your Mental Wellness</h2>
+          <h2>Your Mental Wellness Graph</h2>
         </section>
         <section className={styles.butCont}>
           <button
