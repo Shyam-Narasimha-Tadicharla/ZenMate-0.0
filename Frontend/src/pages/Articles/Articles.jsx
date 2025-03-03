@@ -1,17 +1,18 @@
 import React from "react";
 import Layout from "../../components/layout/layout";
+import build from "../../components/assets/images/build.png";
 
 const BlogHero = () => {
   return (
-    <div className="relative w-full h-[40vh] min-h-[400px] bg-blue-800">
+    <div className="relative w-full h-[40vh] min-h-[400px] bg-blue-800 mt-2">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
-          src=""
+          src="https://media.istockphoto.com/id/1498634032/vector/seamless-vector-banner-with-hand-drawn-psychology-doodles.jpg?b=1&s=612x612&w=0&k=20&c=e64uKQWVyZNHaEjIQqZX_BxLa1RJY9rpH-ruglWmHvY="
           alt="Blog Hero"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40" /> {/* Dark overlay */}
+        <div className="absolute inset-0 bg-blue-900 opacity-80" /> {/* Dark overlay */}
       </div>
 
       {/* Content */}
@@ -44,8 +45,8 @@ const BlogCard = ({ post }) => (
         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
       />
     </div>
-    <div className="flex-1 flex flex-col">
-      <div className="flex gap-2 items-center mb-2">
+    <div className="flex-1 flex flex-col pb-14">
+      <div className="flex gap-2 items-center ">
         <span className="text-gray-600 text-sm">{post.date}</span>
         <span className="text-gray-400">|</span>
         <span className="text-blue-600 text-sm">{post.category}</span>
@@ -107,7 +108,31 @@ const BlogContent = () => {
       slug: "https://www.news18.com/lifestyle/health-and-fitness/mental-health-crisis-among-adolescents-exploring-therapies-for-relief-9245002.html",
       image: "https://images.squarespace-cdn.com/content/v1/5ba3c8d0fb1820285bfe2df7/1538415374655-P2ZEI9ZM8C4C4YGJJVMP/canstockphoto20080791.jpg",
       excerpt: "Adolescence is a critical developmental stage, but today's youth face unheard-of difficulties that have a significant impact on their mental health. Due to social media's influence, cultural expectations, and increased scholastic stress, the incidence of anxiety, depression, and suicide..."
-    }
+    },
+    {
+      title: "Mental Health in the Workplace",
+      date: "Feb 9, 2025",
+      category: "Trauma",
+      slug: "https://www.healthcentral.com/mental-health/mental-health-work?legacy=psycom",
+      image: "https://images.ctfassets.net/zkw0qlnf0vqv/psycom_page_fid33077_asset_33076/bc369feafa88f58d0addfad648e3d361/Large_and_modern_office_interiors?fm=webp&fit=thumb&q=65&w=864&h=576",
+      excerpt: "We've all experienced heartbreak, disappointment, or fear at some point in life. But some moments leave deeper, lasting impressions. Post-traumatic stress disorder is one of those hidden wounds, shaping our lives in subtle ways we might not immediately recognize..."
+    },
+    {
+      title: "Building Resilience ",
+      date: "Dec 4, 2024",
+      category: "Resilience",
+      slug: "https://indianexpress.com/article/lifestyle/life-style/growing-up-with-alcoholic-parents-trauma-and-the-journey-to-healing-9646032/",
+      image: build,
+      excerpt: " We all thrive How to Bounce Back from Setbacks and the Techniques to develop mental strength and adaptability."
+    },
+    {
+      title: "Positive Thinking ",
+      date: "Oct 1, 2024",
+      category: "General Therapy",
+      slug: "https://www.bbc.com/news/articles/c5yrz0yg5j8o",
+      image: "https://c1.wallpaperflare.com/preview/389/213/92/smilies-emotions-balls-funny.jpg",
+      excerpt: "As the air turns crisp and the leaves shift to vibrant shades of orange and gold, fall invites us to embrace a slower, more intentional pace. But transitioning from the carefree days of summer to a structured routine can feel daunting. Don't worry—we've got some..."
+    },
   ];
 
   return (

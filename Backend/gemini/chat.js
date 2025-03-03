@@ -8,7 +8,7 @@ const {
   HarmBlockThreshold,
 } = require("@google/generative-ai");
 
-const MODEL_NAME = "gemini-pro";
+const MODEL_NAME = "gemini-1.5-pro-001";
 const API_KEY = String(process.env.GEMINI_KEY);
 
 const generationConfig = {
@@ -41,7 +41,7 @@ let geminiModel;
 
 const setupGeminiChat = async () => {
   const genAI = new GoogleGenerativeAI(API_KEY);
-  geminiModel = genAI.getGenerativeModel({ model: MODEL_NAME });
+  geminiModel = genAI.getGenerativeModel({ model: MODEL_NAME }, {apiVersion: 'v1beta',});
 };
 
 const startGeminiChat = (history = []) =>

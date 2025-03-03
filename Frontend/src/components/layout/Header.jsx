@@ -39,11 +39,11 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <Link to="/aboutus" className="hover:text-gray-600">About Us</Link>
-          <Link to="/articles" className="hover:text-gray-600">Blogs</Link>
-          <Link to="/message" className="hover:text-gray-600">Talk to Zen</Link>
-          {loggedIn && <Link to="/analysis" className="hover:text-gray-600">Analyse</Link>}
-          {loggedIn && <Link to="/notes" className="hover:text-gray-600">Notes</Link>}
+          <Link to="/aboutus" className="hover:text-gray-600" onClick={window.scrollTo({ top: 0, behavior: 'smooth' })}>About Us</Link>
+          <Link to="/articles" className="hover:text-gray-600" onClick={window.scrollTo({ top: 0, behavior: 'smooth' })}>Blogs</Link>
+          <Link to="/message" className="hover:text-gray-600" onClick={window.scrollTo({ top: 0, behavior: 'smooth' })}>Talk to Zen</Link>
+          {loggedIn && <Link to="/analysis" className="hover:text-gray-600" onClick={window.scrollTo({ top: 0, behavior: 'smooth' })}>Analyse</Link>}
+          {loggedIn && <Link to="/notes" className="hover:text-gray-600" onClick={window.scrollTo({ top: 0, behavior: 'smooth' })}>Notes</Link>}
           <button
             onClick={() => (!loggedIn ? navigate("/login") : logoutUser())}
             className="hover:text-gray-600 ml-8"
