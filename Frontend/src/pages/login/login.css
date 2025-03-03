@@ -1,0 +1,115 @@
+/* Login Page Styling */
+
+body {
+    background-color: #f3f4f6;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    width: 400px;
+  }
+  
+  /* Animation for switching between sign-in and sign-up */
+  .card.animate {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  
+  .input-group {
+    margin-bottom: 1rem;
+  }
+  
+  .input-group label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .input-group input:focus {
+    border-color: #6366f1;
+    outline: none;
+  }
+  
+  .button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .button.signin {
+    background: #4f46e5;
+  }
+  
+  .button.signin:hover {
+    background: #4338ca;
+  }
+  
+  .button.signup {
+    background: #059669;
+  }
+  
+  .button.signup:hover {
+    background: #047857;
+  }
+  
+  .google-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: white;
+    border: 1px solid #d1d5db;
+    color: #374151;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .google-button:hover {
+    background: #f3f4f6;
+  }
+  
+  .toggle-text {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .toggle-text button {
+    background: none;
+    border: none;
+    color: #2563eb;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .toggle-text button:hover {
+    color: #1d4ed8;
+  }
+  
