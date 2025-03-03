@@ -60,8 +60,8 @@ const Footer = () => {
                 <li><div className="cursor-pointer hover:text-gray-900"><Link to="/aboutus">About</Link></div></li>
                 <li><div className="cursor-pointer hover:text-gray-900"><Link to="/articles">Articles</Link></div></li>
                 <li><div className="cursor-pointer hover:text-gray-900"><Link to="/message">Chat</Link></div></li>
+                <li><div className="cursor-pointer hover:text-gray-900"><Link to="/contactus">Contact Us</Link></div></li>
                 <li><div className="cursor-pointer hover:text-gray-900"><Link to="/analysis">Analysis</Link></div></li>
-                <li><div className="cursor-pointer hover:text-gray-900"><Link to="/notes">Notes</Link></div></li>
               </ul>
             </div>
             <div></div>

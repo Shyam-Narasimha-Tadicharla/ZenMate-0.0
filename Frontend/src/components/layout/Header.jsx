@@ -42,8 +42,9 @@ const Header = () => {
           <Link to="/aboutus" className="hover:text-gray-600" onClick={window.scrollTo({ top: 0, behavior: 'smooth' })}>About Us</Link>
           <Link to="/articles" className="hover:text-gray-600" onClick={window.scrollTo({ top: 0, behavior: 'smooth' })}>Blogs</Link>
           <Link to="/message" className="hover:text-gray-600" onClick={window.scrollTo({ top: 0, behavior: 'smooth' })}>Talk to Zen</Link>
+          <Link to="/contactus" className="hover:text-gray-600" onClick={window.scrollTo({ top: 0, behavior: 'smooth' })}>Contact Us</Link>
           {loggedIn && <Link to="/analysis" className="hover:text-gray-600" onClick={window.scrollTo({ top: 0, behavior: 'smooth' })}>Analyse</Link>}
-          {loggedIn && <Link to="/notes" className="hover:text-gray-600" onClick={window.scrollTo({ top: 0, behavior: 'smooth' })}>Notes</Link>}
+
           <button
             onClick={() => (!loggedIn ? navigate("/login") : logoutUser())}
             className="hover:text-gray-600 ml-8"
@@ -67,8 +68,8 @@ const Header = () => {
           <Link to="/aboutus" className="hover:text-gray-600" onClick={() => setMenuOpen(false)}>About Us</Link>
           <Link to="/articles" className="hover:text-gray-600" onClick={() => setMenuOpen(false)}>Blogs</Link>
           <Link to="/message" className="hover:text-gray-600" onClick={() => setMenuOpen(false)}>Talk to Zen</Link>
+          <Link to="/contactus" className="hover:text-gray-600" onClick={() => setMenuOpen(false)}>Contact Us</Link>
           {loggedIn && <Link to="/analysis" className="hover:text-gray-600" onClick={() => setMenuOpen(false)}>Analyse</Link>}
-          {loggedIn && <Link to="/notes" className="hover:text-gray-600" onClick={() => setMenuOpen(false)}>Notes</Link>}
           <button
             onClick={() => {
               setMenuOpen(false);

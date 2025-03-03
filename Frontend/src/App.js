@@ -12,6 +12,7 @@ import { PrivateRouteAnalysis } from "./components/router/PrivateRouterAnalysis"
 import Analysis from "./pages/analysis/analysis";
 import Error from "./pages/error/error";
 import AboutPage from "./pages/AboutUs/AboutPage";
+import Contact from "./pages/ContactUs/Contact";
 
 function App() {
   const { login } = useContext(LoginContext);
@@ -56,6 +57,8 @@ function App() {
           }
         />
         <Route path="/aboutus" element={<AboutPage />} />
+        <Route path="/contactus" element={<Contact />} />
+        
         
         <Route path="/articles" element={<Articles />} />
         <Route path="*" element={<Error />} />
