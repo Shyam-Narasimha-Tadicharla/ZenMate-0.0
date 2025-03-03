@@ -1,13 +1,11 @@
 
 import heroVideo from '../../components/assets/videos/design1.mp4';
-import hero from "../../components/assets/images/hero.png";
 
 const HeroSection = ({ navigate }) => {
     return (
       <div className=" h-screen pt-24">
         {/* Video Background */}
-        <div className="absolute inset-0 overflow-hidden bg-blue-400"
-        >
+        <div className="absolute inset-0 overflow-hidden bg-blue-400">
           <video
             autoPlay
             muted
@@ -17,8 +15,6 @@ const HeroSection = ({ navigate }) => {
             <source src={heroVideo} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-
-          
           <div className="absolute inset-0 bg-black bg-opacity-40" />
         </div>
         

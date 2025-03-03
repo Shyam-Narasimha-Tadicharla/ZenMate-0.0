@@ -85,7 +85,7 @@ const BlogContent = () => {
       excerpt: "As the air turns crisp and the leaves shift to vibrant shades of orange and gold, fall invites us to embrace a slower, more intentional pace. But transitioning from the carefree days of summer to a structured routine can feel daunting. Don't worry—we've got some..."
     },
     {
-      title: "Depression makes you obese? These new revelations will shock you!!",
+      title: "Depression makes you obese?",
       date: "Oct 9, 2024",
       category: "Trauma",
       slug: "https://www.hindustantimes.com/lifestyle/health/are-your-antidepressants-making-you-gain-weight-shocking-new-study-reveals-the-truth-101740634812464.html",
@@ -97,7 +97,7 @@ const BlogContent = () => {
       date: "Oct 4, 2024",
       category: "Trauma",
       slug: "https://www.onmanorama.com/news/kerala/2025/02/28/kerala-it-media-employees-high-stress-youth-commission-survey.html",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiTC9YYxczXSkEMOgX0h_mbcsQKPi7kBLfHw&s",
+      image: "https://www.verywellmind.com/thmb/lEOjlASpyKpn5j12xXL2Fg4Amrg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/work-anxiety-4692762_final-99b80060dfb74d008fa7acd473311683.png",
       excerpt: "Young professionals in Kerala's IT and media sectors are experiencing high levels of work stress, acaccording to a survey conducted by the state Youth Commission. The study found that 84.3 percent of IT employees and 83.5 percent of media professionals reported significant work-related stress...."
     },
     {
