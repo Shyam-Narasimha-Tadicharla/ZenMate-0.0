@@ -84,7 +84,7 @@ function ScoreChart({ dataset }) {
 
   let sampleData = dataset
     .map((rep) => ({
-      score: 11 - parseInt(rep.score),
+      score: parseInt(rep.score),
       timestamp: rep.timestamp,
     }))
     ?.reverse();

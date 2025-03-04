@@ -1,10 +1,16 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Layout from "../../components/layout/layout";
 import build from "../../components/assets/images/build.png";
 
 const BlogHero = () => {
   return (
-    <div className="relative w-full h-[40vh] min-h-[400px] bg-blue-800 mt-2">
+    <motion.div 
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="relative w-full h-[40vh] bg-blue-800 mt-2"
+    >
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
@@ -19,7 +25,7 @@ const BlogHero = () => {
       <div className="relative h-full container mx-auto px-4">
         <div className="flex flex-col justify-center items-center h-full text-center text-white">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl">
-          Blogs For You 
+            Blogs For You 
           </h1>
         </div>
       </div>
@@ -29,20 +35,26 @@ const BlogHero = () => {
             Articles you might find helpful
           </p>
         </center>
-        
       </div>
-      
-    </div>
+    </motion.div>
   );
 };
 
 const BlogCard = ({ post }) => (
-  <div className="flex flex-col h-full">
+  <motion.div 
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5 }}
+    className="flex flex-col h-full ml-4 mr-4"
+  >
     <div className="aspect-[4/3] w-full overflow-hidden rounded-lg mb-4">
-      <img
+      <motion.img
         src={post.image}
         alt={post.title}
-        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+        className="w-full h-full object-cover"
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.3 }}
       />
     </div>
     <div className="flex-1 flex flex-col pb-14">
@@ -56,7 +68,7 @@ const BlogCard = ({ post }) => (
       </h3>
       <p className="text-gray-600 line-clamp-3">{post.excerpt}</p>
     </div>
-  </div>
+  </motion.div>
 );
 
 const BlogContent = () => {
@@ -67,15 +79,15 @@ const BlogContent = () => {
       category: "Trauma",
       slug: "https://www.hindustantimes.com/lifestyle/health/can-hiit-heal-trauma-ptsd-the-30-minute-workout-that-gives-your-brain-an-instant-boost-101739771444277.html",
       image: "https://images.ctfassets.net/zkw0qlnf0vqv/psycom_page_fid31389_asset_31385/44d168240cb76bbbc6ec828143505f51/Conflict_Concept?fm=webp&fit=thumb&q=65&w=864&h=576",
-      excerpt: "We've all experienced heartbreak, disappointment, or fear at some point in life. But some moments leave deeper, lasting impressions. Post-traumatic stress disorder is one of those hidden wounds, shaping our lives in subtle ways we might not immediately recognize..."
+      excerpt: "We've all experienced heartbreak, disappointment, or fear at some point in life. But some moments leave deeper, lasting impressions..."
     },
     {
-      title: "Wanna traumatize those who traumatized you?",
+      title: "Who traumatized you?",
       date: "Oct 4, 2024",
       category: "Trauma",
       slug: "https://indianexpress.com/article/lifestyle/life-style/growing-up-with-alcoholic-parents-trauma-and-the-journey-to-healing-9646032/",
       image: "https://images.ctfassets.net/zkw0qlnf0vqv/psycom_page_fid31958_asset_14576/87f8270d6f9b6abff590cc08c2d8c771/Seesaw_Scale_with_Emoticons_-_3D_Rendering?fm=webp&fit=thumb&q=65&w=864&h=576",
-      excerpt: "We all face difficult moments in life—times of heartache, disappointment, and challenge. Yet, some experiences go deeper, leaving behind emotional wounds that can take time and care to heal. Childhood trauma can be one of these experiences, creating lasting effects..."
+      excerpt: "We all face difficult moments in life—times of heartache, disappointment, and challenge. Yet, some experiences go deeper, leaving behind emotional wounds..."
     },
     {
       title: "Surf away your depression",
@@ -136,7 +148,12 @@ const BlogContent = () => {
   ];
 
   return (
-    <section className="py-32">
+    <motion.section 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="py-32"
+    >
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post, index) => (
@@ -144,7 +161,7 @@ const BlogContent = () => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

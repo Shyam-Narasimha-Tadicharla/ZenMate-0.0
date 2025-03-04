@@ -12,7 +12,7 @@
 .About img {
   width: 560px;
   height: 370px;
-  border-radius: 0 65px 0 0;
+  border-radius: 0 65px 0 65px;
 }
 
 .extra_bg_div {

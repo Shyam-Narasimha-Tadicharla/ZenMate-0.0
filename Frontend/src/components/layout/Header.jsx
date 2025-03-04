@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Logo } from "../../svgs/logoSVG";
 import axios from "axios";
 import LoginContext from "../../context/context";
@@ -28,26 +28,43 @@ const Header = () => {
     <header className="w-full fixed top-0 z-50 backdrop-blur-sm bg-white bg-opacity-40">
       <nav className="py-4 px-6 flex justify-between items-center">
         {/* Logo & Brand Name */}
-        <Link to="/" className="flex items-center space-x-2">
+        <NavLink to="/" className="flex items-center space-x-2">
           <Logo />
           <span className="text-3xl">ZenMate</span>
           <div className="border-l-2 border-gray-300 pl-2 hidden sm:block">
             <div className="text-sm uppercase">Mental</div>
             <div className="text-sm uppercase">Wellness</div>
           </div>
-        </Link>
+        </NavLink>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <Link to="/aboutus" className="hover:text-gray-600" onClick={window.scrollTo({ top: 0, behavior: 'smooth' })}>About Us</Link>
-          <Link to="/articles" className="hover:text-gray-600" onClick={window.scrollTo({ top: 0, behavior: 'smooth' })}>Blogs</Link>
-          <Link to="/message" className="hover:text-gray-600" onClick={window.scrollTo({ top: 0, behavior: 'smooth' })}>Talk to Zen</Link>
-          <Link to="/contactus" className="hover:text-gray-600" onClick={window.scrollTo({ top: 0, behavior: 'smooth' })}>Contact Us</Link>
-          {loggedIn && <Link to="/analysis" className="hover:text-gray-600" onClick={window.scrollTo({ top: 0, behavior: 'smooth' })}>Analyse</Link>}
+          {[
+            { to: "/aboutus", label: "About Us" },
+            { to: "/articles", label: "Blogs" },
+            { to: "/contactus", label: "Contact Us" },
+            { to: "/message", label: "Talk to Zen" },
+            ...(loggedIn ? [{ to: "/analysis", label: "Analyse" }] : []),
+          ].map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) =>
+                `relative text-xl text-black transition-all duration-300 before:content-[''] before:absolute before:bottom-[-2px] before:left-0 before:w-0 before:h-[2px] before:bg-blue-800 before:transition-all before:duration-300 hover:before:w-full ${
+                  isActive
+                    ? "text-blue-800 font-semibold before:w-full"
+                    : "hover:text-blue-800"
+                }`
+              }
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+              {item.label}
+            </NavLink>
+          ))}
 
           <button
             onClick={() => (!loggedIn ? navigate("/login") : logoutUser())}
-            className="hover:text-gray-600 ml-8"
+            className="text-black hover:text-blue-800 transition-all duration-300 text-xl"
           >
             {!loggedIn ? "Get Started" : "Logout ←"}
           </button>
@@ -65,17 +82,35 @@ const Header = () => {
       {/* Mobile Dropdown Menu */}
       {menuOpen && (
         <div className="absolute top-16 left-0 w-full bg-white shadow-md flex flex-col items-center space-y-4 py-4 md:hidden">
-          <Link to="/aboutus" className="hover:text-gray-600" onClick={() => setMenuOpen(false)}>About Us</Link>
-          <Link to="/articles" className="hover:text-gray-600" onClick={() => setMenuOpen(false)}>Blogs</Link>
-          <Link to="/message" className="hover:text-gray-600" onClick={() => setMenuOpen(false)}>Talk to Zen</Link>
-          <Link to="/contactus" className="hover:text-gray-600" onClick={() => setMenuOpen(false)}>Contact Us</Link>
-          {loggedIn && <Link to="/analysis" className="hover:text-gray-600" onClick={() => setMenuOpen(false)}>Analyse</Link>}
+          {[
+            { to: "/aboutus", label: "About Us" },
+            { to: "/articles", label: "Blogs" },
+            { to: "/contactus", label: "Contact Us" },
+            { to: "/message", label: "Talk to Zen" },
+            ...(loggedIn ? [{ to: "/analysis", label: "Analyse" }] : []),
+          ].map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) =>
+                `relative text-black transition-all duration-300 before:content-[''] before:absolute before:bottom-[-2px] before:left-0 before:w-0 before:h-[2px] before:bg-blue-800 before:transition-all before:duration-300 hover:before:w-full ${
+                  isActive
+                    ? "text-blue-800 font-semibold before:w-full"
+                    : "hover:text-blue-800"
+                }`
+              }
+              onClick={() => setMenuOpen(false)}
+            >
+              {item.label}
+            </NavLink>
+          ))}
+
           <button
             onClick={() => {
               setMenuOpen(false);
               !loggedIn ? navigate("/login") : logoutUser();
             }}
-            className="hover:text-gray-600"
+            className="text-black hover:text-blue-800 transition-all duration-300"
           >
             {!loggedIn ? "Get Started" : "Logout ←"}
           </button>

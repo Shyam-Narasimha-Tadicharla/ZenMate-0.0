@@ -21,7 +21,7 @@ const HeroSection = ({ navigate }) => {
         {/* Content Overlay */}
         <div className="relative z-10 h-full flex items-center px-12">
           <div className="w-full sm:w-1/2">
-            <h1 className="text-3xl text-white font-extrabold mb-6">
+            <h1 className="text-3xl text-white font-black mb-6">
               Nurturing Minds, Building Strength, Inspiring Growth
             </h1>
             

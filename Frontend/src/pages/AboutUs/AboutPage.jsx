@@ -13,7 +13,7 @@ const AboutSections = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[400px] w-full overflow-hidden mt-2">
+      <section className="relative h-[40vh] w-full  overflow-hidden mt-2">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"

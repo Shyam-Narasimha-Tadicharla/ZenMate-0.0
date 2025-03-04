@@ -149,7 +149,7 @@ const Login = () => {
       <Link to="/" className="flex items-center space-x-2 mb-8">
         <Logo />
         <span className="text-3xl font-bold">ZenMate</span>
-        <div className="border-l-2 border-gray-300 pl-2">
+        <div className="border-l-2 border-gray-500 pl-2">
             <div className="text-sm uppercase">Mental</div>
             <div className="text-sm uppercase">Wellness</div>
           </div>
@@ -263,7 +263,7 @@ const Login = () => {
 
         {/* Right side - Illustration */}
         <div className="w-1/2  bg-black flex items-center justify-center p-6">
-          <img src={Illustration} alt="Illustration" className="w-full object-cover" />
+          <img src='https://inspiringgo.vercel.app/assets/service/giving_student_oppurtunity_toview_profiles.svg' alt="Illustration" className="w-full object-cover" />
         </div>
       </div>
 

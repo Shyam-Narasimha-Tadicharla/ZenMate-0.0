@@ -1,5 +1,6 @@
 const dotenv = require("dotenv");
 dotenv.config();
+const axios = require("axios"); // Ensure axios is imported
 const { startGeminiChat } = require("../gemini/chat.js");
 const chatHistModel = require("../models/ChatHist.js");
 const {
@@ -14,49 +15,59 @@ const User = require("../models/User.js");
 const doAnalysis = async (req, res) => {
   try {
     if (!req.userId) {
-      res.status(401).json({ Error: "UserId not found" });
-      return;
+      return res.status(401).json({ Error: "UserId not found" });
     }
+
     const userId = req.userId;
     const analysis = await genAnalysis(userId);
 
     if (analysis?.info === "nodata") {
-      res.status(200).json({ msg: "nochatdata" });
-      return;
+      return res.status(200).json({ msg: "nochatdata" });
     }
 
-    const reportDatas = await Report.create({
+    // Save report to database
+    const reportData = await Report.create({
       userId: userId,
       keywords: analysis.keywords,
       analysis: analysis.report,
       score: analysis.score,
     });
+
     try {
-      const user = await User.findOne({id : userId})
-      axios.post('https://mindmate-email-api.onrender.com/welcomeEmail',{
-      "emailId" : user.email,
-      "score" : analysis.score,
-      "analysis"  : analysis.report,
-      "keywords" : analysis.keywords
-  })
+      // Fetch user email
+      const user = await User.findOne({ userId: userId }); // ✅ Corrected field name
+      if (!user) {
+        console.warn(`⚠️ No user found with userId: ${userId}`);
+      } else {
+        // Send welcome email
+        await axios.post("http://localhost:3000/welcomeEmail", {
+          emailId: user.email,
+          score: analysis.score,
+          analysis: analysis.report,
+          keywords: analysis.keywords,
+        });
+
+        console.log(`✅ Welcome email sent to ${user.email}`);
+      }
     } catch (error) {
-      console.log("error sending the message");
+      console.error("❌ Error sending the welcome email:", error.message);
     }
-    res.status(200).json({ data: reportDatas });
+
+    res.status(200).json({ data: reportData });
   } catch (error) {
+    console.error("❌ Error in doAnalysis:", error.message);
     res.status(500).json({ msg: "Internal Server Error" });
   }
 };
 
 const genAnalysis = async (userId) => {
   try {
-    if (userId === undefined) {
-      // through err
+    if (!userId) {
+      console.error("❌ Error: userId is undefined");
       return;
     }
-    const foundHist = await chatHistModel
-      .find({ userId: userId })
-      .sort({ timestamp: 1 });
+
+    const foundHist = await chatHistModel.find({ userId }).sort({ timestamp: 1 });
 
     if (foundHist.length === 0) {
       return { info: "nodata" };
@@ -66,35 +77,27 @@ const genAnalysis = async (userId) => {
     for (let conv of foundHist) {
       foundHistForGemini.push({
         role: "user",
-        parts: [
-          {
-            text: conv.prompt,
-          },
-        ],
+        parts: [{ text: conv.prompt }],
       });
       foundHistForGemini.push({
         role: "model",
-        parts: [
-          {
-            text: conv.response,
-          },
-        ],
+        parts: [{ text: conv.response }],
       });
     }
 
-    // generate report
+    // Generate report
     let chat = startGeminiChat(foundHistForGemini);
     let result = await chat.sendMessage(analysisReportPrompt);
     let response = await result.response;
     let report = response.text();
 
-    // generate score
+    // Generate score
     chat = startGeminiChat(foundHistForGemini);
     result = await chat.sendMessage(analysisScorePrompt);
     response = await result.response;
     const score = response.text();
 
-    // generate keywords
+    // Generate keywords
     chat = startGeminiChat(foundHistForGemini);
     result = await chat.sendMessage(analysisKeywordsPrompt);
     response = await result.response;
@@ -110,29 +113,25 @@ const genAnalysis = async (userId) => {
           kw.toLowerCase() !== "keyword" &&
           kw.toLowerCase() !== "keywords"
       );
-    // console.log(keywords);
 
     return { report, score, keywords };
   } catch (error) {
-    console.error(error);
+    console.error("❌ Error in genAnalysis:", error.message);
   }
 };
 
 const getAnalysis = async (req, res) => {
-  // console.log(req.cookies);
   try {
     if (!req.userId) {
-      res.status(401).json({ msg: "UserId not found" });
-      return;
+      return res.status(401).json({ msg: "UserId not found" });
     }
-    const userId = req.userId;
 
-    const reports = await Report.find({
-      userId: userId,
-    }).sort({ timestamp: -1 });
+    const userId = req.userId;
+    const reports = await Report.find({ userId }).sort({ timestamp: -1 });
 
     res.status(200).json({ data: reports });
   } catch (error) {
+    console.error("❌ Error in getAnalysis:", error.message);
     res.status(500).json({ msg: "Internal Server Error" });
   }
 };

@@ -16,7 +16,7 @@ const TestimonialsSection = () => {
         quote: "During my darkest days of depression, this platform became my lifeline. The 24/7 chat support helped me through sleepless nights. Today, I'm in a much better place and even helping others on their journey.",
         imageSrc: team3,
         altText: "Sarah's Photo",
-        name: "Sarah Chen"
+        name: "Roberto Carlos"
       },
       {
         id: 2,
