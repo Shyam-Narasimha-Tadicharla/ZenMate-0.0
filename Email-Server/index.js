@@ -1,35 +1,69 @@
-const dotenv = require('dotenv')
-dotenv.config()
-const express = require('express')
-const cron = require('node-cron')
-const {sendWelcomeEmail, sendScheduledEmails} = require('./Controller/email.controller')
-const connectDB = require('./database/ConnectDb')
+const dotenv = require('dotenv');
+dotenv.config();
+const express = require('express');
+const cron = require('node-cron');
+const cors = require('cors');
+const { sendWelcomeEmail, sendScheduledEmails } = require('./Controller/email.controller');
+const connectDB = require('./database/ConnectDb');
 
-cron.schedule('01 12 * * *',()=>{
-    //Pick data from Database and send emails to users
-    async function sendMails(){
-        await sendScheduledEmails()
-        console.log("DOne");
+const app = express();
 
+// Connect to MongoDB
+connectDB();
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Home Route
+app.get('/', (req, res) => {
+    res.status(200).json({ message: "Hello" });
+});
+
+// Route for sending welcome email
+app.post('/welcomeEmail', sendWelcomeEmail);
+
+// 🔹 Send Emails Immediately When Server Starts
+(async () => {
+    try {
+        console.log("🚀 Sending emails immediately on server start...");
+        await sendScheduledEmails();
+        console.log("✅ Immediate email dispatch complete!");
+    } catch (error) {
+        console.error("❌ Error sending immediate emails:", error.message);
     }
-    sendMails()
-},{
-    timezone : 'Asia/Kolkata'
-})
+})();
 
-const app = express()
+// 🔹 Schedule Cron Job to Send Emails at 12:01 PM IST Daily
+cron.schedule('01 12 * * *', async () => {
+    console.log("⏳ Scheduled Email Task Started...");
+    try {
+        await sendScheduledEmails();
+        console.log("✅ All Scheduled Emails Sent Successfully!");
+    } catch (error) {
+        console.error("❌ Error in Scheduled Email Task:", error.message);
+    }
+}, {
+    timezone: 'Asia/Kolkata'
+});
 
-app.use(express.json())
-app.use(express.urlencoded({extended:true}))
+// Start Server
+const PORT = process.env.PORT || 8888;
+const server = app.listen(PORT, () => {
+    console.log(`🚀 Server started on port ${PORT}`);
+});
 
-app.get('/',(req,res)=>{
-    res.status(200).json({"message" : "Hello"})
-})
+// Graceful Shutdown (Handle SIGINT & SIGTERM)
+process.on('SIGINT', () => {
+    console.log("🔴 Shutting down server...");
+    server.close(() => {
+        console.log("✅ Server closed. Exiting process.");
+        process.exit(0);
+    });
+});
 
-app.post('/welcomeEmail',sendWelcomeEmail)
-connectDB()
-
-
-app.listen(8888,()=>{
-    console.log("Server Started");
-})
+process.on('SIGTERM', () => {
+    console.log("🔴 Process terminated.");
+    server.close(() => process.exit(0));
+});

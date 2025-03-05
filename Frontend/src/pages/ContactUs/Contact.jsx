@@ -121,14 +121,16 @@ const ContactUs = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[400px] w-full overflow-hidden">
+      <section className="relative h-[40vh] w-full overflow-hidden mt-2">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat "
           style={{
-            backgroundImage: 'url("https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg")',
+            backgroundImage: 'url("https://inspiringgo.vercel.app/assets/Contact_us-a92dc940.jpg")',
             filter: 'brightness(0.7)'
           }}
         />
+        <div className="absolute inset-0 bg-blue-900 opacity-80" /> {/* Dark overlay */}
+
         <div className="relative h-full flex flex-col justify-center items-center text-white">
           <h1 className="text-5xl md:text-7xl mb-2">Contact Us</h1>
         </div>
@@ -146,7 +148,7 @@ const ContactUs = () => {
             <div className="p-8">
               <h1 className="text-4xl font-[600]">
                 Interested in{" "}
-                <span className="text-indigo-500 transition ease-in duration-300 hover:text-black">
+                <span className="text-blue-500 transition ease-in duration-300 hover:text-black">
                   discussing
                 </span>
                 ?
@@ -261,7 +263,7 @@ const ContactUs = () => {
                   type="submit"
                   animate={{ opacity: 1 }}
                   transition={{ ease: "easeIn", duration: 0.3 }}
-                  className="bg-indigo-500 p-4 rounded-md text-white font-[600] text-lg hover:bg-indigo-600"
+                  className="bg-blue-500 p-4 rounded-md text-white font-[600] text-lg hover:bg-blue-600"
                 >
                   SEND MESSAGE
                 </motion.button>
